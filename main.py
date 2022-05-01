@@ -192,6 +192,8 @@ class Overlay:
       canvas.create_rectangle(54, -1, 108, 12, fill=COLOR_FILL_MAP.get(pattern[3] + pattern[4]), outline=COLOR_FILL_MAP.get(pattern[3] + pattern[4]))
       canvas.create_rectangle(108, -1, 162, 12, fill=COLOR_FILL_MAP.get(pattern[6] + pattern[7]), outline=COLOR_FILL_MAP.get(pattern[6] + pattern[7]))
 
+      self.window.root.update()
+
 class Screen:
   def __init__(self, x, y, height, width):
     self.origin = CGPoint(x, y)
@@ -263,7 +265,7 @@ def proceed(x, y, height, width, _overlay):
     pixelTwo = pattern.getColorTwoPixel()
 
     _overlay.displayPattern(pixelOne, pixelTwo)
-
+    
     time.sleep(.5)
 
 
